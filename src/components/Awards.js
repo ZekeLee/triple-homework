@@ -2,9 +2,6 @@ import styled from 'styled-components'
 
 import { fadeInUp } from '../utils/Animation'
 
-const AppStore = `${process.env.PUBLIC_URL}/images/badge-apple4x.png`
-const PlayStore = `${process.env.PUBLIC_URL}/images/play-store2x.png`
-
 const Container = styled.div`
   display: flex;
   margin-top: 50px;
@@ -22,15 +19,15 @@ const Item = styled.div`
   line-height: 22px;
   color: rgba(58, 58, 58, 0.8);
   &:first-child {
-    background: url(${PlayStore}) no-repeat 0 center / contain;
+    background: url(${process.env.PUBLIC_URL}/images/play-store2x.png) no-repeat
+      0 center / contain;
   }
   &:last-child {
     margin-left: 39px;
-    background: url(${AppStore}) no-repeat 0 center / contain;
+    background: url(${process.env.PUBLIC_URL}/images/badge-apple4x.png)
+      no-repeat 0 center / contain;
   }
 `
-
-// const StyleSpan = styled.span``
 
 const Awards = () => (
   <Container>
