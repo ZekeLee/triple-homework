@@ -3,15 +3,9 @@ const createConfig = require('@titicaca/eslint-config-triple/create-config')
 const { extends: extendConfigs, overrides } = createConfig({ type: 'frontend' })
 
 module.exports = {
-  extends: [
-    ...extendConfigs,
-  ],
-  overrides: [
-    ...overrides,
-  ],
+  extends: [...extendConfigs],
+  overrides: [...overrides],
   rules: {
-    rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  },
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 0,
   },
 }
