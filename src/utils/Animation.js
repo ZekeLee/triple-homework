@@ -1,46 +1,23 @@
-import { useEffect, useState } from 'react'
-import { keyframes } from 'styled-components'
+import { useEffect, useRef } from 'react'
 
-function easeOutCubic(t) {
-  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2
-}
-
-const useCountUp = (target) => {
-  const [count, setCount] = useState(0)
-
+const useFadeInUp = (duration = 0, delay = 0, position = 0) => {
+  const element = useRef()
   useEffect(() => {
-    const animationDuration = 2000
-    const frameDuration = 2000 / 60
-    const totalFrames = Math.round(animationDuration / frameDuration)
-    let frame = 0
+    if (typeof duration !== 'number' || typeof delay !== 'number') {
+      return
+    }
+    if (element.current) {
+      const { current } = element
+      current.style.transition = `all ${duration}s ease-out ${delay}s`
+      current.style.opacity = 1
+      current.style.transform = `translateY(0)`
+    }
+  }, [delay, duration])
 
-    const counter = setInterval(() => {
-      frame++
-      const progress = easeOutCubic(frame / totalFrames)
-      const currentCount = Math.round(target * progress)
-
-      if (target >= currentCount) {
-        setCount(currentCount)
-      }
-
-      if (frame === totalFrames) {
-        clearInterval(counter)
-      }
-    }, frameDuration)
-  }, [target])
-
-  return count
+  return {
+    ref: element,
+    style: { opacity: 0, transform: `translateY(${position}px)` },
+  }
 }
 
-const fadeInUp = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform:translateY(0)
-  }
-
-  `
-export { fadeInUp, useCountUp }
+export { useFadeInUp }

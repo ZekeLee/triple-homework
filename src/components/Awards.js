@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-import { fadeInUp } from '../utils/Animation'
+import { useFadeInUp } from '../utils/Animation'
 
 const Container = styled.div`
   display: flex;
   margin-top: 50px;
-  animation: ${fadeInUp} 0.7s 0.2s ease-out;
 `
 
 const Item = styled.div`
@@ -29,19 +28,22 @@ const Item = styled.div`
   }
 `
 
-const Awards = () => (
-  <Container>
-    <Item>
-      2018 구글 플레이스토어
-      <br />
-      올해의 앱 최우수상 수상
-    </Item>
-    <Item>
-      2018 애플 앱스토어
-      <br />
-      오늘의 여행앱 선정
-    </Item>
-  </Container>
-)
+const Awards = () => {
+  const el = useFadeInUp(0.7, 0.2, 15)
+  return (
+    <Container {...el}>
+      <Item>
+        2018 구글 플레이스토어
+        <br />
+        올해의 앱 최우수상 수상
+      </Item>
+      <Item>
+        2018 애플 앱스토어
+        <br />
+        오늘의 여행앱 선정
+      </Item>
+    </Container>
+  )
+}
 
 export default Awards

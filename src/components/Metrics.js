@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { fadeInUp, useCountUp } from '../utils/Animation'
+import { useFadeInUp } from '../utils/Animation'
 
 const Item = styled.li`
   margin-bottom: 20px;
@@ -11,24 +11,21 @@ const Item = styled.li`
   &:last-child {
     margin-bottom: 0;
   }
-  animation: ${fadeInUp} 0.7s 0.1s ease-out;
 `
 
 const Metrics = () => {
-  const userCount = useCountUp(350)
-  const reviewCount = useCountUp(21)
-  const scheduleCount = useCountUp(650)
+  const el = useFadeInUp(0.7, 0.1, 10)
 
   return (
-    <ul>
+    <ul {...el}>
       <Item>
-        <strong>{userCount}만 명</strong>의 여행자
+        <strong>{}만 명</strong>의 여행자
       </Item>
       <Item>
-        <strong>{reviewCount}만 개</strong>의 여행 리뷰
+        <strong>{}만 개</strong>의 여행 리뷰
       </Item>
       <Item>
-        <strong>{scheduleCount}만 개</strong>의 여행 일정
+        <strong>{}만 개</strong>의 여행 일정
       </Item>
     </ul>
   )
