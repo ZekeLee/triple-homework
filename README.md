@@ -1,4 +1,4 @@
-### 📌 프로젝트 실행 방법
+## 📌 프로젝트 실행 방법
 ```bash
 git clone https://github.com/dingunote/triple-homework.git
 cd triple-homework
@@ -6,7 +6,7 @@ npm i
 npm start
 ```
 
-### 📌 사용 기술
+## 📌 사용 기술
 * JavaScript
 * TypeScript
 * React(CRA)
