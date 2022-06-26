@@ -20,6 +20,7 @@ const Text = styled.span`
 
 const ContentLogo = () => {
   const el = useFadeInUp(0.7, 0, 15)
+
   return (
     <Container {...el}>
       <Text>2019년 2월 기준</Text>
