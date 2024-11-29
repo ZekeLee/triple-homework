@@ -31,9 +31,3 @@ npm start
     ├── index.tsx
     └── GlobalStyle.ts         전역 스타일 컴포넌트
 ```
-
-## 📌 부족했던 점
-별도의 라이브러리없이 숫자 카운트 업 기능 구현을 스스로 구현하기 위해서 지속적으로 고민하였으나 다른 방법을 생각해내지 못하고, 기존에 구현되어있던 다른 분의 작업을 참고했습니다. 대신 소스 코드를 이해하기 위해서 노력했습니다.
-[https://github.com/zhsks528/triple-pre-task/blob/master/src/hooks/useCountUp.tsx](https://github.com/zhsks528/triple-pre-task/blob/master/src/hooks/useCountUp.tsx)
-<br>
-ease 함수는 [Easing Functions Cheat Sheet](https://easings.net/)에서 가져왔습니다.
